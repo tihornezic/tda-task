@@ -1,0 +1,65 @@
+.characterCard {
+    position: relative;
+    text-align: center;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 13px 15px rgba(100, 100, 100, 0.2);
+
+    svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.765rem;
+        cursor: pointer;
+        color: $darkBlue;
+    }
+
+    &.human {
+        background-color: $human;
+    }
+
+    &.alien {
+        background-color: $alien;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.4);
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        color: $darkBlue;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    .infoContainer {
+        font-size: 0.9rem;
+
+        .infoRow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .label {
+                color: $grey;
+            }
+
+            .species, .status, .gender {
+                color: $grey;
+                font-weight: 600;
+
+                &.human {
+                    color: $darkBlue;
+                }
+
+                &.alien {
+                    color: $green;
+                }
+            }
+        }
+    }
+}

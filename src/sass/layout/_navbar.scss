@@ -1,0 +1,147 @@
+.navbar {
+    background-color: $blueGrey;
+    padding: 25px 0;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.8);
+
+    ul.ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+
+            .heading {
+                font-size: 1.45rem;
+                font-weight: 600;
+            }
+
+            a {
+                text-decoration: none;
+                color: $white;
+                font-size: 1.2rem;
+                transition: all 0.21s ease;
+
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+
+        .navbarRow {
+            display: flex;
+            align-items: center;
+
+            & > li:first-of-type {
+                margin-right: 50px;
+            }
+
+            li {
+                a {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                &.favorites {
+                    position: relative;
+
+                    .countCircle {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $blue;
+                        top: 15px;
+                        right: -12px;
+                        width: 19px;
+                        height: 19px;
+                        font-weight: 600;
+                        border-radius: 50%;
+                        z-index: 1;
+
+                        .value {
+                            color: $white;
+                            font-size: 0.75rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 536px) {
+            display: none;
+        }
+    }
+
+    .hamburger {
+        display: none;
+        position: relative;
+        float: right;
+        margin-top: -15px;
+        z-index: 15;
+
+        svg {
+            color: $white;
+            font-size: 2rem;
+        }
+
+        &.close {
+            display: none;
+        }
+
+        @media (max-width: 536px) {
+            display: block;
+        }
+    }
+
+    .hamburgerMenu {
+        position: fixed;
+        background-color: $greyWhite;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        transform: translateX(100%);
+        transition: transform 0.45s ease-in-out;
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        .menu {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+
+            ul {
+                list-style: none;
+
+                & > li:first-of-type {
+                    margin-bottom: 25px;
+                }
+                
+                li {
+                    margin-bottom: 25px;
+
+                    .heading {
+                        font-weight: 600;
+                        font-size: 2rem;
+                        max-width: 40px;
+                        text-align: center;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $darkBlue;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
